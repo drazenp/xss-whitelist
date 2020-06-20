@@ -34,7 +34,7 @@ namespace XssWhitelist.Test
         }
 
         [Test]
-        public void Clean_WithNotAllowedNode_RemovesNotAllowedNode()
+        public void Clean_WithNotAllowedTag_RemovesNotAllowedTag()
         {
             // Arrange
             var document = XDocument.Parse("<div><test></test></div>");
@@ -47,7 +47,7 @@ namespace XssWhitelist.Test
         }
 
         [Test]
-        public void Clean_WithNestedNotAllowedNode_RemovesNotAllowedNodes()
+        public void Clean_WithNestedNotAllowedTag_RemovesNotAllowedTags()
         {
             // Arrange
             var document = XDocument.Parse("<div><test><test></test></test></div>");
@@ -60,7 +60,7 @@ namespace XssWhitelist.Test
         }
 
         [Test]
-        public void Clean_WithNestedAllowedNodeInsideNotAllowed_RemovesNotAllowedNodeAndSubNodes()
+        public void Clean_WithNestedAllowedTagInsideNotAllowed_RemovesNotAllowedTagAndSubTags()
         {
             // Arrange
             var document = XDocument.Parse("<div><test><div></div></test></div>");
